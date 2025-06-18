@@ -1,0 +1,188 @@
+/* style.css */
+
+/* --- 全体設定 --- */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd; /* 少し温かみのある白 */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #8B0000; /* 深い赤色 */
+}
+
+/* --- ヘッダーとナビゲーション --- */
+header {
+    background-color: #8B0000; /* 深い赤色 */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFD700; /* 金色 */
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #FFD700; /* 金色 */
+}
+
+/* --- メインコンテンツ --- */
+main {
+    padding: 40px 0;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/1200x500/004B23/FFFFFF?text=Welcome+to+Myanmar');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #FFD700;
+}
+
+
+/* --- カード型レイアウト (観光名所・ギャラリー) --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: #333;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+}
+
+/* --- フェスティバルページ --- */
+.festival {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-left: 5px solid #004B23; /* 緑色 */
+    border-radius: 5px;
+}
+
+.festival h3 {
+    color: #004B23; /* 緑色 */
+    border-bottom: 2px solid #FFD700; /* 金色 */
+    padding-bottom: 10px;
+}
+
+.festival ul {
+    list-style-type: '★';
+    padding-left: 20px;
+}
+
+.festival ul li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* --- 観光名所詳細ページ --- */
+.attraction-detail-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.attraction-detail-header img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.advice-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #F0FFF0; /* ミントグリーン系 */
+    border-radius: 8px;
+}
+
+
+/* --- フッター --- */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
