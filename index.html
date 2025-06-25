@@ -3,53 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ミャンマー観光ガイド - HOME</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Amazing Myanmar - Home</title>
+    <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a href="./index.html" class="logo">Amazing <span>Myanmar</span></a>
+        <ul>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./attractions.html">観光名所</a></li>
+            <li><a href="./festivals.html" class="active">フェスティバル</a></li>
+            <li><a href="./gallery.html">ギャラリー</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Myanmar Travel</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">HOME</a></li>
-                    <li><a href="attractions.html">観光名所</a></li>
-                    <li><a href="festivals.html">フェスティバル</a></li>
-                    <li><a href="gallery.html">ギャラリー</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="hero" style="background-image: url('https://plus.unsplash.com/premium_photo-1695593859876-433b516140e7?q=80&w=2070&auto=format&fit=crop');">
+        <h1>ミャンマーの魔法を発見しよう</h1>
+        <p>黄金の国への忘れられない旅へようこそ</p>
+        <a href="#" class="btn">旅を始める</a>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>ミャンマーへようこそ</h1>
-            <p>黄金のパゴダと豊かな自然があなたを待っています</p>
-        </section>
-
         <div class="container">
-            <h2>ミャンマーの魅力</h2>
-            <p>ミャンマーには、壮大な仏教遺跡、手つかずの自然、そして温かい人々の笑顔があります。この国には、<b>数多くの魅力的な観光名所</b>が点在しており、一生の思い出に残る旅を約束します。</p>
-            <p>さあ、下のリンクからミャンマーの素晴らしい観光名所を探しに行きましょう！</p>
-            
-            <div class="card-container" style="margin-top: 40px;">
-                <a href="attractions.html" class="card">
-                    <img src="https://via.placeholder.com/400x250/8B0000/FFFFFF?text=観光名所一覧" alt="観光名所一覧へ">
-                    <div class="card-content">
-                        <h3>観光名所の一覧ページへ</h3>
-                        <p>ミャンマーの必見スポットを写真でチェックし、次の目的地を見つけましょう。</p>
+            <section id="about">
+                <h2>このサイトについて</h2>
+                <p>ミャンマーには、訪れる人々を魅了する数多くの観光名所があります。現在、当サイトでは主要な<strong>15</strong>箇所の観光地を紹介しています。このサイトは、ミャンマーへの旅行を計画している皆様が、最高の体験をするためのヒント、アドバイス、そして注意点を提供します。</p>
+            </section>
+
+            <section id="featured-destinations">
+                <h2>注目の観光地</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <img src="./assests/img/Shwedagon1.jpg" alt="Shwedagon Pagoda">
+                        <div class="card-content">
+                            <h3>シュエダゴン・パゴダ</h3>
+                            <p>ヤンゴンの象徴であり、ミャンマーで最も神聖な仏塔。黄金に輝く姿は圧巻です。</p>
+                            <a href="./shwedagon_detail.html" class="btn">詳しく見る</a>
+                        </div>
                     </div>
-                </a>
-            </div>
+                    <div class="card">
+                        <img src="./assests/img/Bagan2.jpg" alt="Bagan">
+                        <div class="card-content">
+                            <h3>バガン遺跡群</h3>
+                            <p>広大な平野に数千の仏塔や寺院が点在する、世界三大仏教遺跡の一つです。</p>
+                            <a href="#" class="btn">詳しく見る (作成中)</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./assests/img/inleview.jpeg" alt="Inle Lake">
+                        <div class="card-content">
+                            <h3>インレー湖</h3>
+                            <p>水と共に生きるインダー族のユニークな文化と、美しい水上集落が魅力です。</p>
+                            <a href="#" class="btn">詳しく見る (作成中)</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 ミャンマー観光ガイド. All Rights Reserved.</p>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2025 Amazing Myanmar. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
