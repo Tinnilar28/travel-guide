@@ -3,62 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Myanmar - Home</title>
+    <title>Amazing Myanmar - Home このページがページがサンプルのページです。</title>
     <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="./index.html" class="logo">Amazing <span>Myanmar</span></a>
-        <ul>
-            <li><a href="./index.html">HOME</a></li>
+        <a class="logo" href="./index.html">Amazing <span>Myanmar</span></a>
+        <ul id="nav-links">
+            <li><a href="./index.html" class="active">HOME</a></li>
             <li><a href="./attractions.html">観光名所</a></li>
-            <li><a href="./festivals.html" class="active">フェスティバル</a></li>
+            <li><a href="./festivals.html">フェスティバル</a></li>
             <li><a href="./gallery.html">ギャラリー</a></li>
+            <li><a href="./login.html" class="btn-secondary">ログイン</a></li>
         </ul>
+        <div class="search-container">
+            <input type="text" placeholder="検索...">
+            <button>検索</button>
+        </div>
     </nav>
 
-    <header class="hero" style="background-image: url('https://plus.unsplash.com/premium_photo-1695593859876-433b516140e7?q=80&w=2070&auto=format&fit=crop');">
-        <h1>ミャンマーの魔法を発見しよう</h1>
-        <p>黄金の国への忘れられない旅へようこそ</p>
-        <a href="#" class="btn">旅を始める</a>
-    </header>
-
     <main>
-        <div class="container">
-            <section id="about">
-                <h2>このサイトについて</h2>
-                <p>ミャンマーには、訪れる人々を魅了する数多くの観光名所があります。現在、当サイトでは主要な<strong>15</strong>箇所の観光地を紹介しています。このサイトは、ミャンマーへの旅行を計画している皆様が、最高の体験をするためのヒント、アドバイス、そして注意点を提供します。</p>
-            </section>
-
-            <section id="featured-destinations">
-                <h2>注目の観光地</h2>
-                <div class="grid-container">
-                    <div class="card">
-                        <img src="./assests/img/Shwedagon1.jpg" alt="Shwedagon Pagoda">
-                        <div class="card-content">
-                            <h3>シュエダゴン・パゴダ</h3>
-                            <p>ヤンゴンの象徴であり、ミャンマーで最も神聖な仏塔。黄金に輝く姿は圧巻です。</p>
-                            <a href="./shwedagon_detail.html" class="btn">詳しく見る</a>
+        <!-- Home Page Content -->
+        <div id="home" class="page active">
+            <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assests/img/bgimage.png'); height: 40vh;">
+                <h1>ミャンマーの魔法を発見しよう</h1>
+                <p>黄金の国への忘れられない旅へようこそ</p>
+                <a class="btn" href="./attractions.html">旅を始める</a>
+            </header>
+            <div class="container">
+                <section id="about" style="text-align: center; margin-bottom: 3rem;">
+                    <h2>このサイトについて</h2>
+                    <p>ミャンマーには、訪れる人々を魅了する数多くの観光名所があります。現在、当サイトでは主要な観光地を紹介しています。このサイトは、ミャンマーへの旅行を計画している皆様が、最高の体験をするためのヒント、アドバイス、そして注意点を提供します。</p>
+                </section>
+            
+                <section id="featured-destinations">
+                    <h2 style="text-align: center;">注目の観光地</h2>
+                    <div class="grid-container">
+                        <div class="card">
+                            <img src="./assests/img/Shwedagon1.jpg" alt="Shwedagon Pagoda">
+                            <div class="card-content">
+                                <h3>シュエダゴン・パゴダ</h3>
+                                <p>ヤンゴンの象徴であり、ミャンマーで最も神聖な仏塔。黄金に輝く姿は圧巻です。</p>
+                                <a href="./shwedagon_detail.html" class="btn">詳しく見る</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="./assests/img/Bagan1.jpg" alt="Bagan">
+                            <div class="card-content">
+                                <h3>バガン遺跡群</h3>
+                                <p>広大な平野に数千の仏塔や寺院が点在する、世界三大仏教遺跡の一つです。</p>
+                                <a href="./bagan_detail.html" class="btn">詳しく見る</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="./assests/img/inlelake.jpg" alt="Inle Lake">
+                            <div class="card-content">
+                                <h3>インレー湖</h3>
+                                <p>水と共に生きるインダー族のユニークな文化と、美しい水上集落が魅力です。</p>
+                                <a href="./inle_detail.html" class="btn">詳しく見る</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="./assests/img/Bagan2.jpg" alt="Bagan">
-                        <div class="card-content">
-                            <h3>バガン遺跡群</h3>
-                            <p>広大な平野に数千の仏塔や寺院が点在する、世界三大仏教遺跡の一つです。</p>
-                            <a href="#" class="btn">詳しく見る (作成中)</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="./assests/img/inleview.jpeg" alt="Inle Lake">
-                        <div class="card-content">
-                            <h3>インレー湖</h3>
-                            <p>水と共に生きるインダー族のユニークな文化と、美しい水上集落が魅力です。</p>
-                            <a href="#" class="btn">詳しく見る (作成中)</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
 

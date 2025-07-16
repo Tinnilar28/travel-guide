@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン/登録 - Amazing Myanmar このページがページがサンプルのページです。</title>
+    <link rel="stylesheet" href="./assests/css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a class="logo" href="./index.html">Amazing <span>Myanmar</span></a>
+        <ul id="nav-links">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./attractions.html">観光名所</a></li>
+            <li><a href="./festivals.html">フェスティバル</a></li>
+            <li><a href="./gallery.html">ギャラリー</a></li>
+            <li><a href="./login.html" class="btn-secondary active">ログイン</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="検索...">
+            <button>検索</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Login/Register Page Content -->
+        <div id="login" class="page active">
+            <div class="login-register-container">
+                <div class="form-toggle">
+                    <button id="login-toggle-btn" class="active" onclick="toggleForm('login')">ログイン</button>
+                    <button id="register-toggle-btn" onclick="toggleForm('register')">新規登録</button>
+                </div>
+                <div class="form-container">
+                    <form id="login-form" class="active">
+                        <div class="form-group">
+                            <label for="login-email">メールアドレス</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">パスワード</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn">ログイン</button>
+                    </form>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="register-username">ユーザー名</label>
+                            <input type="text" id="register-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">メールアドレス</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">パスワード</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit" class="btn">登録する</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Amazing Myanmar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Login/Register Form Toggle ---
+        function toggleForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const loginBtn = document.getElementById('login-toggle-btn');
+            const registerBtn = document.getElementById('register-toggle-btn');
+
+            if (formType === 'login') {
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+                loginBtn.classList.add('active');
+                registerBtn.classList.remove('active');
+            } else {
+                loginForm.classList.remove('active');
+                registerForm.classList.add('active');
+                loginBtn.classList.remove('active');
+                registerBtn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

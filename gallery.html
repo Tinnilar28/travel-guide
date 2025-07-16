@@ -3,41 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ギャラリー - Amazing Myanmar</title>
+    <title>ギャラリー - Amazing Myanmar このページがページがサンプルのページです。</title>
     <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="./index.html" class="logo">Amazing <span>Myanmar</span></a>
-        <ul>
+        <a class="logo" href="./index.html">Amazing <span>Myanmar</span></a>
+        <ul id="nav-links">
             <li><a href="./index.html">HOME</a></li>
             <li><a href="./attractions.html">観光名所</a></li>
-            <li><a href="./festivals.html" class="active">フェスティバル</a></li>
-            <li><a href="./gallery.html">ギャラリー</a></li>
+            <li><a href="./festivals.html">フェスティバル</a></li>
+            <li><a href="./gallery.html" class="active">ギャラリー</a></li>
+            <li><a href="./login.html" class="btn-secondary">ログイン</a></li>
         </ul>
+        <div class="search-container">
+            <input type="text" placeholder="検索...">
+            <button>検索</button>
+        </div>
     </nav>
-    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1549923233-96b6437d25e5?q=80&w=2070&auto=format&fit=crop');">
-        <h1>ギャラリー</h1>
-        <p>ミャンマーの息をのむような風景と人々の笑顔</p>
-    </header>
 
-    <main class="container">
-        <p>高品質な写真やショートビデオで、ミャンマーの魅力を視覚的にお届けします。（ビデオの埋め込みも可能です）</p>
-        <div class="gallery-grid" style="margin-top: 2rem;">
-            <img src="./assests/img/Padauk.jpeg" alt="Padauk">
-            <img src="./assests/img/Bagan2.avif" alt="Bagan landscape">
-            <img src="./assests/img/BaganHotairballoon.jpg" alt="Bagan hot air balloons">
-            <img src="./assests/img/inlefloatingmarket.jpg" alt="Inle floating market">
-            <img src="./assests/img/floatinggarden.jpeg" alt="floating garden">
-            <img src="./assests/img/shwedagonlandscape.jpg" alt="Shwedagon details">
-            <img src="./assests/img/UBeinBridgeSunset.jpg" alt="U Bein Bridge at sunset">
-            <img src="./assests/img/KyiteHteeYoe1.jpeg" alt="Golden Rock">
-            <img src="./assests/img/myanmarmonl.jpg" alt="Myanmar monk">
+    <main>
+        <!-- Gallery Page Content -->
+        <div id="gallery" class="page active">
+            <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assests/img/bgimage.png); height: 40vh;">>
+                <h1>ギャラリー</h1>
+                <p>ミャンマーの息をのむような風景と人々の笑顔</p>
+            </header>
+            <div class="container">
+                <p style="text-align: center;">高品質な写真で、ミャンマーの魅力を視覚的にお届けします。画像をクリックすると拡大表示されます。</p>
+                <div class="gallery-grid" style="margin-top: 2rem;">
+                    <img src="./assests/img/Bagan2.avif" alt="Bagan landscape">
+                    <img src="./assests/img/inleview.jpeg" alt="Inle Lake fisherman">
+                    <img src="./assests/img/Shwedagonpagoda.jpg" alt="Shwedagon details">
+                    <img src="./assests/img/UBeinBridgeSunset.jpg" alt="U Bein Bridge at sunset">
+                    <img src="./assests/img/KyiteHteeYoe1.jpeg" alt="Golden Rock">
+                    <img src="./assests/img/mandalaypalace.jpg" alt="Mandalay Palace">
+                    <img src="./assests/img/Shwedagon1.jpg" alt="Shwedagon Pagoda detail">
+                    <img src="./assests/img/myanmarmonl.jpg" alt="Monks walking">
+                    <img src="./assests/img/BaganHotairballoon.jpg" alt="Hot air balloons over Bagan">
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
     <footer class="footer">
         <p>&copy; 2025 Amazing Myanmar. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // --- Gallery Modal Logic ---
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const galleryImages = document.querySelectorAll(".gallery-grid img");
+        const closeSpan = document.querySelector(".modal-close");
+
+        galleryImages.forEach(img => {
+            img.onclick = function(){
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeSpan.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                 modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

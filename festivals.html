@@ -3,58 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フェスティバルとイベント - Amazing Myanmar</title>
+    <title>フェスティバル - Amazing Myanmar このページがページがサンプルのページです。</title>
     <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="./index.html" class="logo">Amazing <span>Myanmar</span></a>
-        <ul>
+        <a class="logo" href="./index.html">Amazing <span>Myanmar</span></a>
+        <ul id="nav-links">
             <li><a href="./index.html">HOME</a></li>
             <li><a href="./attractions.html">観光名所</a></li>
             <li><a href="./festivals.html" class="active">フェスティバル</a></li>
             <li><a href="./gallery.html">ギャラリー</a></li>
+            <li><a href="./login.html" class="btn-secondary">ログイン</a></li>
         </ul>
+        <div class="search-container">
+            <input type="text" placeholder="検索...">
+            <button>検索</button>
+        </div>
     </nav>
-    
-    <header class="hero" style="background-image: url('https://plus.unsplash.com/premium_photo-1677610433335-55f756616a1b?q=80&w=1952&auto=format&fit=crop');">
-        <h1>フェスティバルとイベント</h1>
-        <p>ミャンマーの文化を肌で感じる、活気あふれるお祭り</p>
-    </header>
 
-    <main class="container">
-        <h2>ミャンマーの主要な祝祭</h2>
-        <div class="grid-container">
-            <div class="card">
-                <img src="./assests/img/Thingyan.jpg" alt="Thingyan Water Festival">
-                <div class="card-content">
-                    <h3>ティンジャン水祭り (Thingyan)</h3>
-                    <p><strong>時期：</strong>毎年4月中旬（ミャンマー暦の新年を祝う）</p>
-                    <p><strong>参加方法：</strong>街の至る所に設置されたステージや路上で、誰でも水を掛け合って参加できます。陽気な音楽とダンスで国中が盛り上がります。</p>
-                    <p><strong>注意点と準備：</strong>全身ずぶ濡れになることを覚悟しましょう。防水バッグでスマートフォンやカメラを保護し、すぐに乾く服装で参加するのがおすすめです。</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./assests/img/candle-lighting.jpg" alt="Thadingyut Festival">
-                <div class="card-content">
-                    <h3>タディンギュット祭り (Thadingyut)</h3>
-                    <p><strong>時期：</strong>毎年10月頃（ミャンマー暦の7月の満月）</p>
-                    <p><strong>参加方法：</strong>「光の祭り」として知られ、パゴダや家々がランタンや電飾で美しく飾られます。夜のパゴダを訪れ、幻想的な雰囲気を楽しむのが一般的です。</p>
-                    <p><strong>注意点と準備：</strong>多くの人がパゴダを訪れるため混雑します。歩きやすい靴で行き、敬虔な祭りなので静かに見学しましょう。</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./assests/img/Tasaungtine.jpg" alt="Tazaungdaing Festival">
-                <div class="card-content">
-                    <h3>タザウンダイン祭り (Tazaungdaing)</h3>
-                    <p><strong>時期：</strong>毎年11月頃（ミャンマー暦の8月の満月）</p>
-                    <p><strong>参加方法：</strong>これも光の祭りですが、特にシャン州のタウンジーで打ち上げられる巨大な熱気球が有名です。各地で寄付やセレモニーが行われます。</p>
-                    <p><strong>注意点と準備：</strong>タウンジーの熱気球祭りは非常に混雑し、危険も伴います。参加する場合は安全な場所から見学しましょう。夜は冷え込むことがあるので上着の準備を。</p>
+    <main>
+        <!-- Festivals Page Content -->
+        <div id="festivals" class="page active">
+            <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assests/img/bgimage.png); height: 40vh;">
+                <h1>フェスティバルとイベント</h1>
+                <p>ミャンマーの文化を肌で感じる、活気あふれるお祭り</p>
+            </header>
+            <div class="container">
+                <h2 style="text-align: center;">ミャンマーの主要な祝祭</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <img src="./assests/img/Thingyan.jpg" alt="Thingyan Water Festival">
+                        <div class="card-content">
+                            <h3>ティンジャン (水かけ祭り)</h3>
+                            <p><strong>時期：</strong>毎年4月中旬（ミャンマーの新年）</p>
+                            <p><strong>内容：</strong>一年間の汚れを洗い流すという意味を込めて、国中で盛大に水をかけ合います。最も陽気で活気のあるお祭りです。</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./assests/img/candle-lighting.jpg" alt="Thadingyut Festival">
+                        <div class="card-content">
+                            <h3>タディンギュット祭り (光の祭り)</h3>
+                            <p><strong>時期：</strong>毎年10月頃（ミャンマー暦の7月の満月）</p>
+                            <p><strong>内容：</strong>パゴダや家々がランタンや電飾で美しく飾られます。夜のパゴダを訪れ、幻想的な雰囲気を楽しめます。</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./assests/img/Tasaungtine.jpg" alt="Tazaungdaing Festival">
+                        <div class="card-content">
+                            <h3>タザウンダイン祭り</h3>
+                            <p><strong>時期：</strong>毎年11月頃（タディンギュットの翌月の満月）</p>
+                            <p><strong>内容：</strong>熱気球を夜空に放つことで有名で、特にシャン州のタウンジーで行われる大会は壮観です。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <footer class="footer">
         <p>&copy; 2025 Amazing Myanmar. All Rights Reserved.</p>
     </footer>

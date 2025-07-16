@@ -3,57 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>シュエダゴン・パゴダ - ミャンマー観光ガイド</title> 
+    <title>シュエダゴン・パゴダ - Amazing Myanmar このページがページがサンプルのページです。</title>
     <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="./index.html" class="logo">Amazing <span>Myanmar</span></a>
-        <ul>
-            <li><a href="./index.html" class="active">HOME</a></li>
-            <li><a href="./attractions.html">観光名所</a></li>
+        <a class="logo" href="./index.html">Amazing <span>Myanmar</span></a>
+        <ul id="nav-links">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./attractions.html" class="active">観光名所</a></li>
             <li><a href="./festivals.html">フェスティバル</a></li>
             <li><a href="./gallery.html">ギャラリー</a></li>
+            <li><a href="./login.html" class="btn-secondary">ログイン</a></li>
         </ul>
+        <div class="search-container">
+            <input type="text" placeholder="検索...">
+            <button>検索</button>
+        </div>
     </nav>
 
     <main>
-        <div class="container">
-            <div class="attraction-detail-header">
-                <h2>シュエダゴン・パゴダ (Shwedagon Pagoda)</h2>
-                <p>ヤンゴンが誇る黄金の聖地</p>
-                <img src="https://via.placeholder.com/800x500/FFD700/000000?text=シュエダゴン・パゴダ" alt="シュエダゴン・パゴダの壮大な眺め">
+        <div id="detail" class="page active">
+            <header class="detail-page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assests/img/shwedagon_bg.jpg); height: 40vh;">
+                <h1>シュエダゴン・パゴダ</h1>
+                <p>ミャンマー仏教の総本山、黄金に輝く聖地</p>
+            </header>
+            <div class="container">
+                <div class="detail-content-grid">
+                    <div class="main-content">
+                        <img src="./assests/img/Shwedagonpagoda.jpg" alt="This is the image of Shwedagon" style="width:500px; padding-left:10rem;">
+                        <h2>シュエダゴン・パゴダについて</h2>
+                        <p>ヤンゴン市内の小高い丘の上に建つ、高さ約99mの壮大な仏塔です。仏塔全体が金箔で覆われ、先端には数千個のダイヤモンドや宝石がちりばめられており、その輝きは見る者を圧倒します。ミャンマーで最も神聖な場所とされ、国内外から多くの仏教徒が巡礼に訪れます。</p>
+                    </div>
+                    <div class="sidebar">
+                        <h3>ハイライト</h3>
+                        <ul>
+                            <li>高さ99mの黄金に輝くメインの仏塔</li>
+                            <li>無数のダイヤモンドや宝石で飾られた仏塔の先端</li>
+                            <li>自分の生まれた曜日の祭壇で祈りを捧げる体験</li>
+                            <li>ライトアップされ幻想的に輝く夜の姿</li>
+                        </ul>
+                        <h3 style="margin-top: 2rem;">アドバイス</h3>
+                        <ul>
+                            <li>肩や膝が隠れる服装が必須です（入口でロンジーのレンタル有）。</li>
+                            <li>敷地内は裸足になります。靴や靴下は入口で預けます。</li>
+                            <li>日中は床が熱くなるため、日焼け対策と水分補給を忘れずに。</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div style="text-align: center; margin-top: 3rem;">
+                    <a class="btn btn-secondary" href="./attractions.html">観光名所一覧へ戻る</a>
+                </div>
             </div>
-
-            <section class="content-section">
-                <h3>見どころ</h3>
-                <p>シュエダゴン・パゴダは、ミャンマーで最も神聖な仏塔とされています。高さ約100メートルの巨大な仏塔は全体が金箔で覆われ、頂上には数千個のダイヤモンドや宝石がちりばめられています。昼間の太陽の下で輝く姿も、夜にライトアップされた幻想的な姿も、どちらも訪れる人々を魅了します。</p>
-            </section>
-            
-            <section class="advice-section">
-                <h3>アドバイスと注意点</h3>
-                
-                <h4>服装</h4>
-                <p>パゴダの敷地内では、男女ともに肩や膝が隠れる服装が必須です。短いスカートやショートパンツ、タンクトップでは入場できません。入口でロンジー（巻きスカート）の貸し出しもありますが、羽織るものやスカーフを持参すると便利です。</p>
-
-                <h4>エチケット</h4>
-                <p>敷地内では靴と靴下を脱いで裸足になる必要があります。入口で靴を預けるか、袋に入れて持ち歩きます。仏像に背を向けたり、足を向けたりするのは失礼にあたりますので注意しましょう。</p>
-
-                <h4>交通手段</h4>
-                <p>ヤンゴン市内の中心部からタクシーで簡単にアクセスできます。Grabなどの配車アプリを利用すると料金交渉の必要がなく便利です。</p>
-
-                <h4>健康と安全</h4>
-                <p>日中は日差しが強く、裸足で歩く床も熱くなることがあります。日焼け止めや帽子の準備、こまめな水分補給を心がけましょう。貴重品の管理には十分注意してください。</p>
-            </section>
-            
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 ミャンマー観光ガイド. All Rights Reserved.</p>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2025 Amazing Myanmar. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>

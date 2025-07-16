@@ -1,15 +1,15 @@
-/* style.css */
-
 /* --- グローバル設定 --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 :root {
-    --bg-color: #FDF8F0; /* ソフトベージュ */
-    --primary-color: #005B5E; /* ディープティール */
-    --accent-color: #D4AF37; /* ゴールド */
+    --bg-color: #FDF8F0;
+    /* ソフトベージュ */
+    --primary-color: #005B5E;
+    /* ディープティール */
+    --accent-color: #D4AF37;
+    /* ゴールド */
     --text-color: #333333;
     --light-gray: #f4f4f4;
     --white: #ffffff;
+    --danger-color: #d9534f;
 }
 
 * {
@@ -19,18 +19,22 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans JP', 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 a {
     text-decoration: none;
     color: var(--primary-color);
+    cursor: pointer;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
@@ -42,6 +46,29 @@ h1, h2, h3 {
     overflow: hidden;
 }
 
+.page {
+    display: none;
+    /* Hide all pages by default */
+}
+
+.page.active {
+    display: block;
+    /* Show only the active page */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* --- ナビゲーションバー --- */
 .navbar {
     background: var(--white);
@@ -50,16 +77,16 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 .navbar .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
 }
 
 .navbar .logo span {
@@ -69,22 +96,51 @@ h1, h2, h3 {
 .navbar ul {
     list-style: none;
     display: flex;
-}
-
-.navbar ul li {
-    margin-left: 20px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .navbar ul li a {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    transition: color 0.3s, border-bottom 0.3s;
     font-weight: 600;
-    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
-.navbar ul li a:hover, .navbar ul li a.active {
+.navbar ul li a:hover,
+.navbar ul li a.active {
     color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
-/* --- ヘッダー (Hero) --- */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.search-container button:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- ヘッダー --- */
 .hero {
     height: 60vh;
     background-size: cover;
@@ -95,54 +151,76 @@ h1, h2, h3 {
     align-items: center;
     text-align: center;
     color: var(--white);
-    padding: 0 20px;
+    padding: 2rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1549923233-96b6437d25e5?q=80&w=2070&auto=format&fit=crop');
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--white);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin-top: 1rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.5rem;
 }
 
 .btn {
     display: inline-block;
-    background: var(--accent-color);
+    background: var(--primary-color);
     color: var(--white);
-    padding: 12px 25px;
-    border-radius: 5px;
-    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
     font-weight: 600;
-    transition: background 0.3s ease;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 91, 94, 0.3);
 }
 
 .btn:hover {
-    background: #c09b2d;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
 }
 
 /* --- カードスタイル --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
 .card {
     background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 15px;
     overflow: hidden;
-    margin: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
 }
 
@@ -150,99 +228,241 @@ h1, h2, h3 {
     padding: 1.5rem;
 }
 
-/* --- Gridレイアウト --- */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+.card-content h3 {
+    margin-top: 0;
 }
 
-/* --- Destination Page Specific --- */
-.destination-grid a {
+.card-content .btn {
+    margin-top: 1rem;
+}
+
+/* --- 詳細ページ --- */
+.detail-page-header {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 3rem;
     position: relative;
-    display: block;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
-.destination-grid a:hover {
-    transform: scale(1.03);
-}
-.destination-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.destination-title {
+
+.detail-page-header::before {
+    content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.detail-page-header * {
+    position: relative;
+    z-index: 2;
+}
+
+.detail-page-header h1 {
+    font-size: 2.8rem;
     color: var(--white);
-    padding: 2rem 1rem 1rem;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.detail-page-header p {
     font-size: 1.2rem;
-    font-weight: 600;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-
-/* --- 各観光名所のページ --- */
-.spot-detail-layout {
-    display: flex;
+.detail-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     gap: 2rem;
-    margin-top: 2rem;
-}
-.spot-info {
-    flex: 2;
-}
-.spot-image {
-    flex: 1;
-    min-width: 300px;
-}
-.spot-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.info-section {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    border-left: 5px solid var(--accent-color);
-}
-.info-section h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--light-gray);
-}
-.info-section ul {
-    list-style-type: '✔  ';
-    padding-left: 1.5rem;
-}
-.info-section ul li {
-    margin-bottom: 0.5rem;
+    align-items: flex-start;
 }
 
+.main-content,
+.sidebar {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h3 {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li::before {
+    content: '✨';
+    margin-right: 10px;
+}
 
 /* --- ギャラリーページ --- */
 .gallery-grid {
     column-count: 3;
     column-gap: 1rem;
 }
+
 .gallery-grid img {
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
 }
+
 .gallery-grid img:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Image Modal (Lightbox) */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85vw;
+    max-height: 85vh;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 45px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* --- ログイン/登録ページ --- */
+.login-register-container {
+    max-width: 450px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    color: #ccc;
+    font-weight: 600;
+    position: relative;
+}
+
+.form-toggle button.active {
+    color: var(--primary-color);
+}
+
+.form-toggle button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.form-container form {
+    display: none;
+}
+
+.form-container form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 91, 94, 0.2);
+}
+
+.form-container .btn {
+    width: 100%;
+    padding: 1rem;
 }
 
 /* --- フッター --- */
@@ -251,29 +471,57 @@ h1, h2, h3 {
     color: var(--white);
     text-align: center;
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 /* --- レスポンシブ対応 --- */
-@media(max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+@media (max-width: 992px) {
+    .detail-content-grid {
+        grid-template-columns: 1fr;
     }
-    .navbar ul {
-        padding-top: 1rem;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .spot-detail-layout {
-        flex-direction: column;
-    }
+
     .gallery-grid {
         column-count: 2;
     }
 }
-@media(max-width: 500px) {
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        margin-top: 1rem;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .navbar ul li a {
+        display: block;
+        padding: 0.8rem 1rem;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
     .gallery-grid {
         column-count: 1;
     }
-}

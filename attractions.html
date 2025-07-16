@@ -3,53 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>観光名所一覧 - Amazing Myanmar</title>
+    <title>観光名所 - Amazing Myanmar このページがページがサンプルのページです。</title>
     <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="./index.html" class="logo">Amazing <span>Myanmar</span></a>
-        <ul>
+        <a class="logo" href="./index.html">Amazing <span>Myanmar</span></a>
+        <ul id="nav-links">
             <li><a href="./index.html">HOME</a></li>
-            <li><a href="./attractions.html">観光名所</a></li>
-            <li><a href="./festivals.html" class="active">フェスティバル</a></li>
+            <li><a href="./attractions.html" class="active">観光名所</a></li>
+            <li><a href="./festivals.html">フェスティバル</a></li>
             <li><a href="./gallery.html">ギャラリー</a></li>
+            <li><a href="./login.html" class="btn-secondary">ログイン</a></li>
         </ul>
+        <div class="search-container">
+            <input type="text" placeholder="検索...">
+            <button>検索</button>
+        </div>
     </nav>
 
-    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1594225227939-509a15a31c68?q=80&w=2070&auto=format&fit=crop');">
-        <h1>観光名所一覧</h1>
-        <p>写真をクリックして、各名所の詳細をご覧ください。</p>
-    </header>
-
     <main>
-        <div class="container">
-            <div class="destination-grid">
-                <a href="./shwedagon_detail.html">
-                    <img src="./assests/img/Shwedagonpagoda.jpg" alt="Shwedagon Pagoda">
-                    <div class="destination-title">シュエダゴン・パゴダ</div>
-                </a>
-                <a href="#">
-                    <img src="./assests/img/Bagan1.jpg" alt="Bagan">
-                    <div class="destination-title">バガン遺跡群</div>
-                </a>
-                <a href="#">
-                    <img src="./assests/img/inlelake.jpg" alt="Inle Lake">
-                    <div class="destination-title">インレー湖</div>
-                </a>
-                <a href="#">
-                    <img src="./assests/img/KyiteHteeYoe.jpg" alt="Golden Rock">
-                    <div class="destination-title">ゴールデンロック</div>
-                </a>
-                <a href="#">
-                     <img src="./assests/img/Mandalay.jpg" alt="Mandalay">
-                    <div class="destination-title">マンダレー</div>
-                </a>
-                <a href="#">
-                    <img src="./assests/img/UBeinBridge.jpg " alt="U Bein Bridge">
-                    <div class="destination-title">ウーベイン橋</div>
-                </a>
+        <!-- Attractions Page Content -->
+        <div id="attractions" class="page active">
+             <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assests/img/bgimage.png); height: 40vh;">
+                <h1>観光名所一覧</h1>
+                <p>写真をクリックして、各名所の詳細をご覧ください。</p>
+            </header>
+            <div class="container">
+                <div class="grid-container">
+                    <a href="./shwedagon_detail.html" class="card" style="cursor: pointer;">
+                        <img src="./assests/img/Shwedagonpagoda.jpg" alt="シュエダゴン・パゴダ">
+                        <div class="card-content">
+                            <h3>シュエダゴン・パゴダ</h3>
+                            <p>ミャンマー仏教の総本山、黄金に輝く聖地</p>
+                        </div>
+                    </a>
+                    <a href="./bagan_detail.html" class="card" style="cursor: pointer;">
+                        <img src="./assests/img/Bagan2.jpg" alt="バガン遺跡群">
+                        <div class="card-content">
+                            <h3>バガン遺跡群</h3>
+                            <p>無数の仏塔が林立する幻想的な風景</p>
+                        </div>
+                    </a>
+                    <a href="./inle_detail.html" class="card" style="cursor: pointer;">
+                        <img src="./assests/img/inlelake.jpg" alt="インレー湖">
+                        <div class="card-content">
+                            <h3>インレー湖</h3>
+                            <p>水と共に生きる人々のユニークな文化</p>
+                        </div>
+                    </a>
+                    <a href="./kyitehteeyoe_detail.html" class="card" style="cursor: pointer;">
+                        <img src="./assests/img/KyiteHteeYoe.jpg" alt="ゴールデンロック">
+                        <div class="card-content">
+                            <h3>ゴールデンロック</h3>
+                            <p>絶妙なバランスで輝く巡礼の聖地</p>
+                        </div>
+                    </a>
+                    <a href="./mandalay_detail.html" class="card" style="cursor: pointer;">
+                        <img src="./assests/img/Mandalay.jpg" alt="マンダレー">
+                        <div class="card-content">
+                            <h3>マンダレー</h3>
+                            <p>ミャンマー最後の王朝が栄えた古都</p>
+                        </div>
+                    </a>
+                    <a href="./ubein_detail.html" class="card" style="cursor: pointer;">
+                        <img src="./assests/img/UBeinBridge.jpg" alt="ウーベイン橋">
+                        <div class="card-content">
+                            <h3>ウーベイン橋</h3>
+                            <p>世界最長の木造橋が描く夕暮れのシルエット</p>
+                        </div>
+                    </a>
                 </div>
+            </div>
         </div>
     </main>
 
